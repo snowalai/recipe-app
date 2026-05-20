@@ -22,17 +22,16 @@
   }
   #app{display:flex;flex-direction:column;height:100%;width:100%;background:var(--paper);position:relative;overflow:hidden}
 
-  /* Topbar */
   .topbar{background:var(--red);padding-top:calc(env(safe-area-inset-top,0px) + 14px);padding-bottom:12px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;align-items:center;justify-content:space-between;flex-shrink:0;gap:12px}
   .topbar-brand{flex:1;min-width:0}
   .topbar-brand .ja{font-size:10px;color:rgba(255,255,255,0.6);letter-spacing:2.5px}
   .topbar-brand .zh{font-size:18px;font-weight:600;color:#fff;letter-spacing:0.5px;margin-top:1px}
-  .icon-btn{background:rgba(255,255,255,0.18);border:none;border-radius:50%;width:40px;height:40px;min-width:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;font-size:22px;flex-shrink:0}
+  .topbar-actions{display:flex;gap:8px;flex-shrink:0}
+  .icon-btn{background:rgba(255,255,255,0.18);border:none;border-radius:50%;width:40px;height:40px;min-width:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;font-size:20px;flex-shrink:0}
   .icon-btn:active{background:rgba(255,255,255,0.28)}
   .wave{height:8px;background:var(--red);flex-shrink:0;position:relative;overflow:hidden}
   .wave::after{content:'';position:absolute;bottom:0;left:0;right:0;height:8px;background:var(--paper);border-radius:60% 60% 0 0/8px 8px 0 0}
 
-  /* Sync bar */
   .sync-bar{display:flex;align-items:center;gap:6px;padding:6px 16px;font-size:11px;background:var(--white);border-bottom:0.5px solid var(--line);flex-shrink:0;min-height:28px}
   .sync-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
   .sync-dot.ok{background:#4CAF50}
@@ -41,7 +40,6 @@
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
   .sync-txt{color:var(--muted)}
 
-  /* Loading */
   .loading-overlay{position:absolute;inset:0;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;z-index:100}
   .loading-overlay.gone{display:none}
   .spinner{width:36px;height:36px;border:3px solid var(--line);border-top-color:var(--red);border-radius:50%;animation:spin 0.8s linear infinite}
@@ -50,30 +48,25 @@
 
   .scroll-body{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;padding-bottom:calc(env(safe-area-inset-bottom,0px) + 20px)}
 
-  /* Stats */
   .stats-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:14px 14px 6px}
   .stat-card{background:var(--white);border:0.5px solid var(--line);border-radius:var(--radius-md);padding:10px 12px}
   .stat-label{font-size:11px;color:var(--muted);letter-spacing:0.3px}
   .stat-val{font-size:21px;font-weight:600;color:var(--ink);margin-top:3px}
 
-  /* Search */
   .search-wrap{padding:6px 14px}
   .search-inner{display:flex;align-items:center;gap:8px;background:var(--white);border:0.5px solid var(--line);border-radius:var(--radius-md);padding:0 12px;height:40px}
   .search-inner input{border:none;background:none;outline:none;font-size:14px;flex:1;color:var(--ink)}
   .search-inner i{font-size:16px;color:var(--muted)}
 
-  /* Chips */
   .chips{display:flex;gap:7px;padding:6px 14px 10px;overflow-x:auto;scrollbar-width:none}
   .chips::-webkit-scrollbar{display:none}
   .chip{padding:5px 13px;border-radius:20px;font-size:12px;white-space:nowrap;cursor:pointer;border:0.5px solid var(--line);background:var(--white);color:var(--muted);transition:all .15s}
   .chip.on{background:var(--red);color:#fff;border-color:var(--red)}
 
-  /* Section head */
   .sec-head{display:flex;align-items:center;gap:8px;padding:2px 14px 8px}
   .sec-line{flex:1;height:0.5px;background:var(--line)}
   .sec-txt{font-size:10px;color:var(--muted);letter-spacing:2px}
 
-  /* Recipe cards */
   .card-list{display:flex;flex-direction:column;gap:9px;padding:0 14px}
   .rcard{display:flex;background:var(--white);border:0.5px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;height:92px;transition:border-color .15s}
   .rcard:active{border-color:var(--red-mid);background:#FDFAF9}
@@ -88,23 +81,21 @@
   .badge-cat{background:var(--red-light);color:var(--red)}
   .badge-price{background:var(--gold-light);color:var(--gold)}
 
-  /* FAB */
   .fab-wrap{padding:16px 14px 8px}
   .fab{background:var(--red);color:#fff;border:none;border-radius:14px;padding:14px 20px;font-size:15px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;width:100%;box-shadow:0 4px 16px rgba(139,46,46,0.25);transition:transform .1s}
   .fab:active{transform:scale(0.98)}
 
-  /* Views */
   .view{display:none;flex-direction:column;height:100%}
   .view.show{display:flex}
   .list-view{display:flex;flex-direction:column;height:100%}
   .list-view.gone{display:none}
 
-  /* Back bar */
   .back-bar{background:var(--red);padding-top:calc(env(safe-area-inset-top,0px) + 12px);padding-bottom:12px;padding-left:max(14px,env(safe-area-inset-left,0px));padding-right:max(14px,env(safe-area-inset-right,0px));display:flex;align-items:center;justify-content:space-between;flex-shrink:0;gap:8px}
-  .back-btn{background:none;border:none;color:#fff;font-size:14px;cursor:pointer;display:flex;align-items:center;gap:5px;padding:4px}
-  .del-btn{background:rgba(255,255,255,0.18);border:none;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;font-size:16px}
+  .back-btn{background:none;border:none;color:#fff;font-size:14px;cursor:pointer;display:flex;align-items:center;gap:5px;padding:4px;white-space:nowrap}
+  .back-bar-actions{display:flex;gap:8px}
+  .icon-btn-sm{background:rgba(255,255,255,0.18);border:none;border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;font-size:17px;flex-shrink:0}
+  .icon-btn-sm:active{background:rgba(255,255,255,0.3)}
 
-  /* Detail */
   .detail-scroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:calc(env(safe-area-inset-bottom,0px) + 20px)}
   .detail-hero{width:100%;height:200px;background:var(--red-light);display:flex;align-items:center;justify-content:center;font-size:80px;overflow:hidden;flex-shrink:0}
   .detail-hero img{width:100%;height:100%;object-fit:cover}
@@ -126,7 +117,10 @@
   .step-item{display:flex;gap:11px;margin-bottom:12px;font-size:14px;line-height:1.7;color:var(--ink)}
   .step-num{min-width:22px;height:22px;border-radius:50%;background:var(--red);color:#fff;font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
 
-  /* Add / Edit form */
+  /* price-linked notice */
+  .price-notice{font-size:11px;color:var(--muted);background:var(--gold-light);border-radius:var(--radius-sm);padding:7px 10px;margin-top:10px;display:flex;align-items:center;gap:6px}
+  .price-notice i{color:var(--gold);font-size:13px;flex-shrink:0}
+
   .add-scroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:calc(env(safe-area-inset-bottom,0px) + 20px)}
   .form-wrap{padding:16px;display:flex;flex-direction:column;gap:14px}
   .flabel{font-size:11px;color:var(--muted);letter-spacing:0.8px;margin-bottom:5px;display:block}
@@ -139,50 +133,42 @@
   .upload-area .uhint{font-size:12px;color:var(--muted);position:relative;z-index:1}
   #imgFileInput{display:none}
 
-  /* Ingredient editor rows */
   .ingr-hint-row{display:grid;grid-template-columns:1fr 1fr 28px;gap:6px;padding-bottom:4px}
   .ingr-hint-row span{font-size:10px;color:var(--muted)}
   .ingr-editor{display:flex;flex-direction:column;gap:7px}
   .ingr-edit-row{display:grid;grid-template-columns:1fr 1fr 28px;gap:6px;align-items:start}
-
-  /* Name autocomplete wrapper */
   .ingr-name-wrap{position:relative}
   .ingr-name-input{width:100%;border:0.5px solid var(--line);border-radius:var(--radius-sm);padding:8px 9px;font-size:13px;background:var(--white);color:var(--ink)}
   .ingr-name-input:focus{outline:none;border-color:var(--red)}
-  .autocomplete-dropdown{
-    position:absolute;top:100%;left:0;right:0;background:var(--white);
-    border:0.5px solid var(--line);border-radius:var(--radius-sm);
-    box-shadow:0 4px 12px rgba(0,0,0,0.1);z-index:50;max-height:160px;overflow-y:auto;display:none;
-  }
+  .autocomplete-dropdown{position:absolute;top:100%;left:0;right:0;background:var(--white);border:0.5px solid var(--line);border-radius:var(--radius-sm);box-shadow:0 4px 12px rgba(0,0,0,0.1);z-index:50;max-height:160px;overflow-y:auto;display:none}
   .autocomplete-dropdown.show{display:block}
   .ac-item{padding:9px 11px;font-size:13px;cursor:pointer;border-bottom:0.5px solid var(--line);display:flex;justify-content:space-between;align-items:center}
   .ac-item:last-child{border-bottom:none}
   .ac-item:active{background:var(--red-light)}
   .ac-item-name{color:var(--ink)}
   .ac-item-info{font-size:11px;color:var(--muted)}
-
-  /* Amount + auto price */
   .ingr-amt-wrap{display:flex;flex-direction:column;gap:4px}
   .ingr-amt-input{width:100%;border:0.5px solid var(--line);border-radius:var(--radius-sm);padding:8px 9px;font-size:13px;background:var(--white);color:var(--ink)}
   .ingr-amt-input:focus{outline:none;border-color:var(--red)}
   .ingr-price-tag{font-size:11px;color:var(--gold);min-height:16px;padding-left:2px}
-
   .del-ingr{background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;padding:0;padding-top:8px}
   .add-ingr{font-size:13px;color:var(--red);border:0.5px dashed var(--red-mid);background:var(--red-light);border-radius:var(--radius-md);padding:9px;cursor:pointer;text-align:center;margin-top:2px}
   .save-btn{background:var(--red);color:#fff;border:none;border-radius:var(--radius-lg);padding:14px;font-size:16px;font-weight:600;cursor:pointer;margin-top:6px;letter-spacing:0.5px}
   .save-btn:active{opacity:0.88}
   .save-btn:disabled{opacity:0.5;cursor:not-allowed}
 
-  /* Ingredient Library view */
+  /* Library */
   .lib-list{display:flex;flex-direction:column;gap:8px;padding:14px}
   .lib-card{background:var(--white);border:0.5px solid var(--line);border-radius:var(--radius-md);display:flex;align-items:center;padding:12px 14px;gap:12px}
   .lib-card-info{flex:1;min-width:0}
   .lib-card-name{font-size:14px;font-weight:500;color:var(--ink)}
   .lib-card-sub{font-size:12px;color:var(--muted);margin-top:2px}
   .lib-card-price{font-size:15px;font-weight:600;color:var(--gold);white-space:nowrap}
-  .lib-del-btn{background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;padding:4px;flex-shrink:0}
+  .lib-card-actions{display:flex;gap:6px}
+  .lib-action-btn{background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;padding:4px;flex-shrink:0}
+  .lib-action-btn.edit{color:var(--red-mid)}
 
-  /* Add ingredient modal */
+  /* Modal */
   .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:200;display:flex;align-items:flex-end;justify-content:center}
   .modal-overlay.gone{display:none}
   .modal-sheet{background:var(--paper);border-radius:20px 20px 0 0;padding:20px 16px calc(env(safe-area-inset-bottom,0px) + 24px);width:100%;max-width:480px}
@@ -192,7 +178,6 @@
   .modal-btn{background:var(--red);color:#fff;border:none;border-radius:var(--radius-lg);padding:13px;font-size:15px;font-weight:600;cursor:pointer;width:100%}
   .modal-btn:disabled{opacity:0.5}
 
-  /* Misc */
   textarea.finput{resize:none;line-height:1.7}
   select.finput{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%239A8E87' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:30px}
   .empty{text-align:center;padding:48px 20px;color:var(--muted);font-size:14px}
@@ -208,11 +193,11 @@
     <div class="loading-txt">正在加载食谱…</div>
   </div>
 
-  <!-- Add Ingredient Modal -->
+  <!-- Ingredient Modal (add / edit) -->
   <div class="modal-overlay gone" id="modalOverlay" onclick="closeModal(event)">
     <div class="modal-sheet">
       <div class="modal-handle"></div>
-      <div class="modal-title">添加食材价格</div>
+      <div class="modal-title" id="modalTitle">添加食材价格</div>
       <div class="modal-form">
         <div>
           <span class="flabel">食材名称</span>
@@ -243,7 +228,7 @@
         <span class="ja">料理帳 · RYŌRICHŌ</span>
         <span class="zh">我的食谱</span>
       </div>
-      <div style="display:flex;gap:8px">
+      <div class="topbar-actions">
         <button class="icon-btn" onclick="showLibrary()" aria-label="食材价格库" title="食材价格库">
           <i class="ti ti-basket"></i>
         </button>
@@ -295,16 +280,23 @@
   <div class="view" id="detailView">
     <div class="back-bar">
       <button class="back-btn" onclick="showList()"><i class="ti ti-arrow-left"></i> 返回</button>
-      <button class="del-btn" onclick="delCurrent()" aria-label="删除菜谱"><i class="ti ti-trash"></i></button>
+      <div class="back-bar-actions">
+        <button class="icon-btn-sm" onclick="editCurrent()" aria-label="编辑菜谱" title="编辑">
+          <i class="ti ti-edit"></i>
+        </button>
+        <button class="icon-btn-sm" onclick="delCurrent()" aria-label="删除菜谱" title="删除">
+          <i class="ti ti-trash"></i>
+        </button>
+      </div>
     </div>
     <div class="detail-scroll"><div id="detailContent"></div></div>
   </div>
 
-  <!-- ADD VIEW -->
+  <!-- ADD / EDIT VIEW -->
   <div class="view" id="addView">
     <div class="back-bar">
-      <button class="back-btn" onclick="showList()"><i class="ti ti-arrow-left"></i> 取消</button>
-      <span style="color:#fff;font-size:15px;font-weight:600">记录菜谱</span>
+      <button class="back-btn" onclick="cancelForm()"><i class="ti ti-arrow-left"></i> 取消</button>
+      <span style="color:#fff;font-size:15px;font-weight:600" id="formTitle">记录菜谱</span>
       <div style="width:36px"></div>
     </div>
     <div class="add-scroll">
@@ -339,7 +331,7 @@
           <span class="flabel">食材清单</span>
           <div style="font-size:11px;color:var(--muted);background:var(--red-light);border-radius:var(--radius-sm);padding:7px 10px;margin-bottom:8px">
             <i class="ti ti-info-circle" style="vertical-align:-1px"></i>
-            输入食材名可从价格库自动补全，填写用量后自动计算费用
+            输入食材名可从价格库自动补全，填用量后自动算费用
           </div>
           <div class="ingr-hint-row">
             <span>食材名称</span><span>用量（如：100g、2个）</span><span></span>
@@ -351,8 +343,7 @@
         </div>
         <div>
           <span class="flabel">制作步骤（每行一步）</span>
-          <textarea class="finput" id="stepsInput" rows="6"
-            placeholder="苦瓜切片，鸡蛋打散&#10;热锅下油，炒蛋盛出&#10;下苦瓜翻炒至熟&#10;加盐调味，倒回鸡蛋翻炒均匀"></textarea>
+          <textarea class="finput" id="stepsInput" rows="6" placeholder="每行写一个步骤"></textarea>
         </div>
         <button class="save-btn" id="saveBtn" onclick="saveRecipe()">保存菜谱</button>
       </div>
@@ -364,13 +355,17 @@
     <div class="back-bar">
       <button class="back-btn" onclick="showList()"><i class="ti ti-arrow-left"></i> 返回</button>
       <span style="color:#fff;font-size:15px;font-weight:600">食材价格库</span>
-      <button class="icon-btn" onclick="openModal()" aria-label="添加食材"><i class="ti ti-plus"></i></button>
+      <button class="icon-btn-sm" onclick="openModal()" aria-label="添加食材"><i class="ti ti-plus"></i></button>
     </div>
-    <div class="sync-bar" id="libSyncBar">
+    <div class="sync-bar">
       <div class="sync-dot ok" id="libSyncDot"></div>
       <span class="sync-txt" id="libSyncTxt">食材价格库</span>
     </div>
     <div class="scroll-body">
+      <div class="price-notice" style="margin:14px 14px 0">
+        <i class="ti ti-refresh"></i>
+        修改价格后，所有菜谱的成本将实时更新
+      </div>
       <div class="lib-list" id="libList"></div>
       <div class="fab-wrap">
         <button class="fab" onclick="openModal()"><i class="ti ti-plus"></i> 添加食材价格</button>
@@ -386,23 +381,24 @@ const H = {'Content-Type':'application/json','apikey':SUPABASE_KEY,'Authorizatio
 const RECIPES_API = SUPABASE_URL + '/rest/v1/recipes';
 const INGR_API    = SUPABASE_URL + '/rest/v1/ingredients';
 
-let recipes = [];
-let ingredientLib = []; // [{id, name, unit, price_per_unit}]
-let activeTag = '全部';
-let currentId = null;
-let pendingImg = null;
+let recipes       = [];
+let ingredientLib = [];
+let activeTag     = '全部';
+let currentId     = null;  // recipe being viewed
+let editingId     = null;  // recipe being edited (null = new)
+let pendingImg    = null;  // base64 of new image, or undefined to keep old
 
-// ── Sync status ──
+// ── Sync UI ──
 function setSyncStatus(state, txt) {
-  document.getElementById('syncDot').className = 'sync-dot ' + state;
+  document.getElementById('syncDot').className  = 'sync-dot ' + state;
   document.getElementById('syncTxt').textContent = txt;
 }
 function setLibSync(state, txt) {
-  document.getElementById('libSyncDot').className = 'sync-dot ' + state;
+  document.getElementById('libSyncDot').className  = 'sync-dot ' + state;
   document.getElementById('libSyncTxt').textContent = txt;
 }
 
-// ── Load all data ──
+// ── Load ──
 async function load() {
   setSyncStatus('loading', '正在连接云端…');
   try {
@@ -422,41 +418,39 @@ async function load() {
   renderList();
 }
 
-// ── Price calculation ──
-// Parse a quantity string like "100g", "2个", "250ml" → {value, unit}
+// ── Price helpers ──
 function parseQty(str) {
   str = (str || '').trim();
   const m = str.match(/^([\d.]+)\s*([a-zA-Z\u4e00-\u9fa5]*)/);
   if (!m) return null;
   return { value: parseFloat(m[1]), unit: m[2].toLowerCase() };
 }
-
-// Parse the library unit like "500g", "1个" → {value, unit}
-function parseLibUnit(str) {
-  return parseQty(str);
+// Compute cost for one ingredient given current lib
+function livePrice(ingrName, amtStr) {
+  const lib = ingredientLib.find(i => i.name === ingrName);
+  if (!lib) return null;
+  const used    = parseQty(amtStr);
+  const libUnit = parseQty(lib.unit);
+  if (!used || !libUnit || libUnit.value === 0) return null;
+  if (used.unit !== libUnit.unit) return null;
+  return (used.value / libUnit.value) * lib.price_per_unit;
 }
-
-// Given a library entry and a usage amount string, compute cost
-function computeCost(libEntry, amountStr) {
-  const used = parseQty(amountStr);
-  const lib  = parseLibUnit(libEntry.unit);
-  if (!used || !lib || lib.value === 0) return null;
-  // Units must be compatible (same base unit string)
-  if (used.unit !== lib.unit) return null;
-  return (used.value / lib.value) * libEntry.price_per_unit;
-}
-
+// Compute total cost for a recipe using CURRENT lib prices
 function calcRecipeCost(r) {
-  return r.ingredients.reduce((s, i) => s + (parseFloat(i.p) || 0), 0);
+  return r.ingredients.reduce((s, i) => {
+    const live = livePrice(i.n, i.a);
+    // fall back to stored price if lib entry missing
+    return s + (live !== null ? live : parseFloat(i.p) || 0);
+  }, 0);
 }
 
-// ── Render list ──
+// ── List ──
 function renderList() {
   const q = (document.getElementById('searchInput').value || '').toLowerCase();
-  const filtered = recipes.filter(r => {
-    return (activeTag === '全部' || r.category === activeTag) &&
-           (!q || r.name.toLowerCase().includes(q));
-  });
+  const filtered = recipes.filter(r =>
+    (activeTag === '全部' || r.category === activeTag) &&
+    (!q || r.name.toLowerCase().includes(q))
+  );
   const total = recipes.length;
   const avg   = total ? recipes.reduce((s,r) => s + calcRecipeCost(r), 0) / total : 0;
   document.getElementById('totalCount').textContent = total + ' 道';
@@ -467,7 +461,7 @@ function renderList() {
     return;
   }
   el.innerHTML = filtered.map(r => {
-    const cost   = calcRecipeCost(r);
+    const cost    = calcRecipeCost(r);
     const imgHtml = r.img ? `<img src="${r.img}" alt="${r.name}">` : '🍱';
     return `<div class="rcard" onclick="showDetail(${r.id})">
       <div class="rcard-img">${imgHtml}</div>
@@ -500,7 +494,6 @@ function hideAll() {
   document.getElementById('addView').classList.remove('show');
   document.getElementById('libraryView').classList.remove('show');
 }
-
 function showList() {
   document.getElementById('listView').classList.remove('gone');
   document.getElementById('detailView').classList.remove('show');
@@ -509,12 +502,21 @@ function showList() {
   renderList();
 }
 
+// ── Detail ──
 function showDetail(id) {
   const r = recipes.find(x => x.id === id);
   if (!r) return;
   currentId = id;
-  const cost    = calcRecipeCost(r);
+  // Compute live prices per ingredient
+  const ingrRows = r.ingredients.map(i => {
+    const live = livePrice(i.n, i.a);
+    const p    = live !== null ? live : (parseFloat(i.p) || 0);
+    const fromLib = live !== null;
+    return { ...i, p, fromLib };
+  });
+  const cost    = ingrRows.reduce((s, i) => s + i.p, 0);
   const imgHtml = r.img ? `<img src="${r.img}" alt="${r.name}">` : '🍱';
+  const hasLibPrices = ingrRows.some(i => i.fromLib);
   document.getElementById('detailContent').innerHTML = `
     <div class="detail-hero">${imgHtml}</div>
     <div class="detail-body">
@@ -526,18 +528,19 @@ function showDetail(id) {
       </div>
       <div style="margin-bottom:20px">
         <div class="sec-title">食材清单</div>
-        ${r.ingredients.map(i => `
+        ${ingrRows.map(i => `
           <div class="ingr-row">
             <span class="ingr-name">${i.n}</span>
             <div class="ingr-right">
               <span class="ingr-amt">${i.a}</span>
-              <span class="ingr-price">¥${parseFloat(i.p||0).toFixed(1)}</span>
+              <span class="ingr-price">¥${i.p.toFixed(1)}${i.fromLib ? ' <i class="ti ti-refresh" style="font-size:10px;opacity:0.6" title="实时价格"></i>' : ''}</span>
             </div>
           </div>`).join('')}
         <div class="total-row">
           <span class="total-label">食材总成本</span>
           <span class="total-val">¥${cost.toFixed(1)}</span>
         </div>
+        ${hasLibPrices ? `<div class="price-notice"><i class="ti ti-refresh"></i>标有↻的价格与价格库实时联动，修改价格库后自动更新</div>` : ''}
       </div>
       <div>
         <div class="sec-title">制作步骤</div>
@@ -553,17 +556,67 @@ function showDetail(id) {
   document.getElementById('detailView').querySelector('.detail-scroll').scrollTop = 0;
 }
 
+// ── Edit current recipe ──
+function editCurrent() {
+  const r = recipes.find(x => x.id === currentId);
+  if (!r) return;
+  editingId = currentId;
+  document.getElementById('formTitle').textContent = '编辑菜谱';
+  // Fill form
+  document.getElementById('nameInput').value     = r.name;
+  document.getElementById('timeInput').value     = r.time;
+  document.getElementById('stepsInput').value    = r.steps.join('\n');
+  const catSel = document.getElementById('categoryInput');
+  for (let i = 0; i < catSel.options.length; i++) {
+    if (catSel.options[i].value === r.category) { catSel.selectedIndex = i; break; }
+  }
+  // Image
+  pendingImg = undefined; // undefined = keep existing
+  const previewImg = document.getElementById('previewImg');
+  if (r.img) {
+    previewImg.src = r.img;
+    previewImg.style.display = 'block';
+    document.getElementById('uploadIcon').style.display = 'none';
+    document.getElementById('uploadHint').style.display = 'none';
+  } else {
+    previewImg.style.display = 'none';
+    document.getElementById('uploadIcon').style.display = '';
+    document.getElementById('uploadHint').style.display = '';
+  }
+  document.getElementById('imgFileInput').value = '';
+  // Ingredients
+  const ed = document.getElementById('ingrEditor');
+  ed.innerHTML = '';
+  r.ingredients.forEach(i => addIngrRow(i.n, i.a, i.p));
+  document.getElementById('saveBtn').disabled    = false;
+  document.getElementById('saveBtn').textContent = '保存修改';
+  hideAll();
+  document.getElementById('addView').classList.add('show');
+  document.getElementById('addView').querySelector('.add-scroll').scrollTop = 0;
+}
+
+function cancelForm() {
+  if (editingId !== null) {
+    showDetail(editingId);
+  } else {
+    showList();
+  }
+}
+
+// ── Add (new) ──
 function showAdd() {
+  editingId  = null;
   pendingImg = null;
-  document.getElementById('nameInput').value  = '';
-  document.getElementById('timeInput').value  = '';
-  document.getElementById('stepsInput').value = '';
+  document.getElementById('formTitle').textContent    = '记录菜谱';
+  document.getElementById('nameInput').value          = '';
+  document.getElementById('timeInput').value          = '';
+  document.getElementById('stepsInput').value         = '';
   document.getElementById('previewImg').style.display = 'none';
   document.getElementById('uploadIcon').style.display = '';
   document.getElementById('uploadHint').style.display = '';
-  document.getElementById('imgFileInput').value = '';
-  document.getElementById('saveBtn').disabled    = false;
-  document.getElementById('saveBtn').textContent = '保存菜谱';
+  document.getElementById('imgFileInput').value       = '';
+  document.getElementById('saveBtn').disabled         = false;
+  document.getElementById('saveBtn').textContent      = '保存菜谱';
   const ed = document.getElementById('ingrEditor');
   ed.innerHTML = '';
   addIngrRow(); addIngrRow(); addIngrRow();
@@ -572,41 +625,19 @@ function showAdd() {
   document.getElementById('addView').querySelector('.add-scroll').scrollTop = 0;
 }
 
-function showLibrary() {
-  hideAll();
-  document.getElementById('libraryView').classList.add('show');
-  renderLibrary();
-}
-
-// ── Library render ──
-function renderLibrary() {
-  const el = document.getElementById('libList');
-  if (!ingredientLib.length) {
-    el.innerHTML = '<div class="empty"><i class="ti ti-basket"></i>还没有食材价格，点击右上角添加</div>';
-    return;
-  }
-  el.innerHTML = ingredientLib.map(item => `
-    <div class="lib-card">
-      <div class="lib-card-info">
-        <div class="lib-card-name">${item.name}</div>
-        <div class="lib-card-sub">每 ${item.unit} · ¥${parseFloat(item.price_per_unit).toFixed(1)}</div>
-      </div>
-      <div class="lib-card-price">¥${parseFloat(item.price_per_unit).toFixed(1)}</div>
-      <button class="lib-del-btn" onclick="delIngredient(${item.id})" aria-label="删除">
-        <i class="ti ti-trash"></i>
-      </button>
-    </div>`).join('');
-}
-
-// ── Ingredient row in recipe form ──
+// ── Ingredient rows ──
 function addIngrRow(n='', a='', p=null) {
   const ed  = document.getElementById('ingrEditor');
   const row = document.createElement('div');
   row.className = 'ingr-edit-row';
-
   const rowId = 'ir_' + Date.now() + '_' + Math.random().toString(36).slice(2);
   row.dataset.rowId = rowId;
-
+  // Pre-fill lib data if name exists in lib
+  const libEntry = ingredientLib.find(i => i.name === n);
+  if (libEntry) {
+    row.dataset.libUnit  = libEntry.unit;
+    row.dataset.libPrice = libEntry.price_per_unit;
+  }
   row.innerHTML = `
     <div class="ingr-name-wrap">
       <input type="text" class="ingr-name-input" placeholder="食材名" value="${n}"
@@ -616,12 +647,19 @@ function addIngrRow(n='', a='', p=null) {
     <div class="ingr-amt-wrap">
       <input type="text" class="ingr-amt-input" placeholder="如：100g、2个" value="${a}"
         oninput="onAmtInput(this)">
-      <div class="ingr-price-tag" id="pt_${rowId}">${p !== null ? '¥' + parseFloat(p).toFixed(1) : ''}</div>
+      <div class="ingr-price-tag" id="pt_${rowId}"></div>
     </div>
     <button class="del-ingr" onclick="this.closest('.ingr-edit-row').remove()" aria-label="删除">
       <i class="ti ti-x"></i>
     </button>`;
   ed.appendChild(row);
+  // Show initial price if editing and lib entry exists
+  if (libEntry && a) setTimeout(() => recalcPrice(row), 0);
+  else if (!libEntry && p !== null) {
+    // Show stored price as fallback hint
+    const pt = document.getElementById('pt_' + rowId);
+    if (pt && p > 0) { pt.textContent = '¥' + parseFloat(p).toFixed(1); pt.style.color = 'var(--muted)'; }
+  }
 }
 
 function onNameInput(input) {
@@ -633,7 +671,7 @@ function onNameInput(input) {
   const matches = ingredientLib.filter(i => i.name.includes(q));
   if (!matches.length) { dd.classList.remove('show'); return; }
   dd.innerHTML = matches.map(m => `
-    <div class="ac-item" onmousedown="selectIngredient(this,'${m.name}','${m.unit}',${m.price_per_unit},'${rowId}')">
+    <div class="ac-item" onmousedown="selectIngredient('${m.name}','${m.unit}',${m.price_per_unit},'${rowId}')">
       <span class="ac-item-name">${m.name}</span>
       <span class="ac-item-info">¥${parseFloat(m.price_per_unit).toFixed(1)}/${m.unit}</span>
     </div>`).join('');
@@ -641,98 +679,123 @@ function onNameInput(input) {
 }
 
 function hideDropdown(input, delay) {
-  const row   = input.closest('.ingr-edit-row');
-  const rowId = row.dataset.rowId;
-  setTimeout(() => {
-    const dd = document.getElementById('dd_' + rowId);
-    if (dd) dd.classList.remove('show');
-  }, delay);
+  const rowId = input.closest('.ingr-edit-row').dataset.rowId;
+  setTimeout(() => { const dd = document.getElementById('dd_'+rowId); if(dd) dd.classList.remove('show'); }, delay);
 }
 
-function selectIngredient(el, name, unit, pricePerUnit, rowId) {
-  const row       = document.querySelector(`[data-row-id="${rowId}"]`);
-  const nameInput = row.querySelector('.ingr-name-input');
-  const amtInput  = row.querySelector('.ingr-amt-input');
-  const priceTag  = document.getElementById('pt_' + rowId);
-  const dd        = document.getElementById('dd_' + rowId);
-  nameInput.value = name;
+function selectIngredient(name, unit, pricePerUnit, rowId) {
+  const row      = document.querySelector(`[data-row-id="${rowId}"]`);
+  row.querySelector('.ingr-name-input').value = name;
   row.dataset.libUnit  = unit;
   row.dataset.libPrice = pricePerUnit;
-  dd.classList.remove('show');
-  // Recalculate if amount already filled
+  document.getElementById('dd_'+rowId).classList.remove('show');
   recalcPrice(row);
-  amtInput.focus();
+  row.querySelector('.ingr-amt-input').focus();
 }
 
-function onAmtInput(input) {
-  const row = input.closest('.ingr-edit-row');
-  recalcPrice(row);
-}
+function onAmtInput(input) { recalcPrice(input.closest('.ingr-edit-row')); }
 
 function recalcPrice(row) {
   const rowId    = row.dataset.rowId;
-  const priceTag = document.getElementById('pt_' + rowId);
-  const amtInput = row.querySelector('.ingr-amt-input');
+  const pt       = document.getElementById('pt_' + rowId);
+  const amtStr   = row.querySelector('.ingr-amt-input').value;
   const libUnit  = row.dataset.libUnit;
   const libPrice = parseFloat(row.dataset.libPrice);
-  if (!libUnit || isNaN(libPrice)) { priceTag.textContent = ''; return; }
-  const libEntry = { unit: libUnit, price_per_unit: libPrice };
-  const cost = computeCost(libEntry, amtInput.value);
-  if (cost === null) {
-    priceTag.textContent = '单位不匹配';
-    priceTag.style.color = 'var(--muted)';
-  } else {
-    priceTag.textContent = '≈ ¥' + cost.toFixed(2);
-    priceTag.style.color = 'var(--gold)';
+  if (!libUnit || isNaN(libPrice)) { if(pt) pt.textContent = ''; return; }
+  const used    = parseQty(amtStr);
+  const libU    = parseQty(libUnit);
+  if (!used || !libU || libU.value === 0) { if(pt) pt.textContent = ''; return; }
+  if (used.unit !== libU.unit) {
+    if(pt) { pt.textContent = '单位不匹配'; pt.style.color = 'var(--muted)'; }
+    return;
   }
+  const cost = (used.value / libU.value) * libPrice;
+  if(pt) { pt.textContent = '≈ ¥' + cost.toFixed(2); pt.style.color = 'var(--gold)'; }
 }
 
-// ── Collect ingredients from form ──
+function parseQty(str) {
+  str = (str || '').trim();
+  const m = str.match(/^([\d.]+)\s*([a-zA-Z\u4e00-\u9fa5]*)/);
+  if (!m) return null;
+  return { value: parseFloat(m[1]), unit: m[2].toLowerCase() };
+}
+
 function collectIngredients() {
-  const rows = document.querySelectorAll('.ingr-edit-row');
-  return Array.from(rows).map(row => {
+  return Array.from(document.querySelectorAll('.ingr-edit-row')).map(row => {
     const name    = row.querySelector('.ingr-name-input').value.trim();
     const amt     = row.querySelector('.ingr-amt-input').value.trim();
     const libUnit = row.dataset.libUnit;
     const libPr   = parseFloat(row.dataset.libPrice);
     let price = 0;
     if (libUnit && !isNaN(libPr)) {
-      const c = computeCost({unit: libUnit, price_per_unit: libPr}, amt);
-      if (c !== null) price = c;
+      const used = parseQty(amt), libU = parseQty(libUnit);
+      if (used && libU && libU.value > 0 && used.unit === libU.unit)
+        price = (used.value / libU.value) * libPr;
     }
     return { n: name, a: amt, p: price };
   }).filter(i => i.n);
 }
 
-// ── Save recipe ──
+// ── Save (insert or update) ──
 async function saveRecipe() {
   const name = document.getElementById('nameInput').value.trim();
   if (!name) { alert('请输入菜名'); return; }
   const btn  = document.getElementById('saveBtn');
   btn.disabled = true; btn.textContent = '保存中…';
   setSyncStatus('loading', '正在保存到云端…');
-  const time       = parseInt(document.getElementById('timeInput').value) || 20;
-  const category   = document.getElementById('categoryInput').value;
+  const time        = parseInt(document.getElementById('timeInput').value) || 20;
+  const category    = document.getElementById('categoryInput').value;
   const ingredients = collectIngredients();
-  const steps      = document.getElementById('stepsInput').value.split('\n').map(s=>s.trim()).filter(Boolean);
-  const id         = Date.now();
-  const recipe     = { id, img: pendingImg||null, name, category, time,
-    ingredients: ingredients.length ? ingredients : [{n:'食材待填写',a:'',p:0}],
-    steps: steps.length ? steps : ['步骤待填写'] };
-  try {
-    const res = await fetch(RECIPES_API, {
-      method:'POST', headers:{...H,'Prefer':'return=representation'},
-      body: JSON.stringify(recipe)
-    });
-    if (!res.ok) throw new Error(await res.text());
-    recipes.push(recipe);
-    setSyncStatus('ok', '已保存到云端');
-    setTimeout(() => setSyncStatus('ok', '云端同步'), 2000);
-    showDetail(id);
-  } catch(e) {
-    setSyncStatus('err', '保存失败，请重试');
-    btn.disabled = false; btn.textContent = '保存菜谱';
-    alert('保存失败，请检查网络后重试');
+  const steps       = document.getElementById('stepsInput').value.split('\n').map(s=>s.trim()).filter(Boolean);
+
+  if (editingId !== null) {
+    // ── UPDATE existing recipe ──
+    const existing = recipes.find(r => r.id === editingId);
+    // pendingImg: null = new upload, undefined = keep old
+    const imgToSave = (pendingImg === undefined) ? (existing ? existing.img : null) : pendingImg;
+    const updates = { name, category, time, ingredients, steps, img: imgToSave };
+    try {
+      const res = await fetch(RECIPES_API + '?id=eq.' + editingId, {
+        method: 'PATCH',
+        headers: {...H, 'Prefer': 'return=representation'},
+        body: JSON.stringify(updates)
+      });
+      if (!res.ok) throw new Error(await res.text());
+      // Update local array
+      const idx = recipes.findIndex(r => r.id === editingId);
+      if (idx !== -1) recipes[idx] = { ...recipes[idx], ...updates };
+      setSyncStatus('ok', '修改已保存');
+      setTimeout(() => setSyncStatus('ok', '云端同步'), 2000);
+      currentId = editingId;
+      editingId = null;
+      showDetail(currentId);
+    } catch(e) {
+      setSyncStatus('err', '保存失败，请重试');
+      btn.disabled = false; btn.textContent = '保存修改';
+      alert('保存失败，请检查网络后重试');
+    }
+  } else {
+    // ── INSERT new recipe ──
+    const id     = Date.now();
+    const recipe = { id, img: pendingImg||null, name, category, time,
+      ingredients: ingredients.length ? ingredients : [{n:'食材待填写',a:'',p:0}],
+      steps: steps.length ? steps : ['步骤待填写'] };
+    try {
+      const res = await fetch(RECIPES_API, {
+        method: 'POST',
+        headers: {...H, 'Prefer': 'return=representation'},
+        body: JSON.stringify(recipe)
+      });
+      if (!res.ok) throw new Error(await res.text());
+      recipes.push(recipe);
+      setSyncStatus('ok', '已保存到云端');
+      setTimeout(() => setSyncStatus('ok', '云端同步'), 2000);
+      showDetail(id);
+    } catch(e) {
+      setSyncStatus('err', '保存失败，请重试');
+      btn.disabled = false; btn.textContent = '保存菜谱';
+      alert('保存失败，请检查网络后重试');
+    }
   }
 }
 
@@ -749,19 +812,85 @@ async function delCurrent() {
     setTimeout(() => setSyncStatus('ok', '云端同步'), 2000);
     showList();
   } catch(e) {
-    setSyncStatus('err', '删除失败，请重试');
+    setSyncStatus('err', '删除失败');
     alert('删除失败，请检查网络后重试');
   }
 }
 
-// ── Ingredient library modal ──
+// ── Image ──
+function handleImg(e) {
+  const file = e.target.files[0]; if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    pendingImg = ev.target.result;
+    const img = document.getElementById('previewImg');
+    img.src = pendingImg; img.style.display = 'block';
+    document.getElementById('uploadIcon').style.display = 'none';
+    document.getElementById('uploadHint').style.display = 'none';
+  };
+  reader.readAsDataURL(file);
+}
+
+// ── Library ──
+function showLibrary() {
+  hideAll();
+  document.getElementById('libraryView').classList.add('show');
+  renderLibrary();
+}
+
+function renderLibrary() {
+  const el = document.getElementById('libList');
+  if (!ingredientLib.length) {
+    el.innerHTML = '<div class="empty"><i class="ti ti-basket"></i>还没有食材价格，点击下方按钮添加</div>';
+    return;
+  }
+  el.innerHTML = ingredientLib.map(item => `
+    <div class="lib-card">
+      <div class="lib-card-info">
+        <div class="lib-card-name">${item.name}</div>
+        <div class="lib-card-sub">每 ${item.unit}</div>
+      </div>
+      <div class="lib-card-price">¥${parseFloat(item.price_per_unit).toFixed(1)}</div>
+      <div class="lib-card-actions">
+        <button class="lib-action-btn edit" onclick="openModalEdit(${item.id})" title="编辑价格">
+          <i class="ti ti-edit"></i>
+        </button>
+        <button class="lib-action-btn" onclick="delIngredient(${item.id})" title="删除">
+          <i class="ti ti-trash"></i>
+        </button>
+      </div>
+    </div>`).join('');
+}
+
+// modal state
+let editingLibId = null;
+
 function openModal() {
-  document.getElementById('libNameInput').value  = '';
-  document.getElementById('libUnitInput').value  = '';
-  document.getElementById('libPriceInput').value = '';
-  document.getElementById('libSaveBtn').disabled = false;
+  editingLibId = null;
+  document.getElementById('modalTitle').textContent     = '添加食材价格';
+  document.getElementById('libNameInput').value         = '';
+  document.getElementById('libNameInput').disabled      = false;
+  document.getElementById('libUnitInput').value         = '';
+  document.getElementById('libPriceInput').value        = '';
+  document.getElementById('libSaveBtn').disabled        = false;
+  document.getElementById('libSaveBtn').textContent     = '保存到价格库';
   document.getElementById('modalOverlay').classList.remove('gone');
   setTimeout(() => document.getElementById('libNameInput').focus(), 100);
+}
+
+function openModalEdit(id) {
+  const item = ingredientLib.find(i => i.id === id);
+  if (!item) return;
+  editingLibId = id;
+  document.getElementById('modalTitle').textContent     = '修改食材价格';
+  document.getElementById('libNameInput').value         = item.name;
+  document.getElementById('libNameInput').disabled      = true; // name is unique key, don't change
+  document.getElementById('libUnitInput').value         = item.unit;
+  document.getElementById('libPriceInput').value        = item.price_per_unit;
+  document.getElementById('libSaveBtn').disabled        = false;
+  document.getElementById('libSaveBtn').textContent     = '保存修改';
+  document.getElementById('modalOverlay').classList.remove('gone');
+  setTimeout(() => document.getElementById('libPriceInput').focus(), 100);
 }
 
 function closeModal(e) {
@@ -777,22 +906,48 @@ async function saveIngredient() {
   const btn = document.getElementById('libSaveBtn');
   btn.disabled = true; btn.textContent = '保存中…';
   setLibSync('loading', '保存中…');
-  try {
-    const id = Date.now();
-    const res = await fetch(INGR_API, {
-      method:'POST', headers:{...H,'Prefer':'return=representation'},
-      body: JSON.stringify({id, name, unit, price_per_unit: price})
-    });
-    if (!res.ok) throw new Error(await res.text());
-    ingredientLib.push({id, name, unit, price_per_unit: price});
-    ingredientLib.sort((a,b) => a.name.localeCompare(b.name,'zh'));
-    setLibSync('ok', '已保存');
-    document.getElementById('modalOverlay').classList.add('gone');
-    renderLibrary();
-  } catch(e) {
-    setLibSync('err', '保存失败');
-    btn.disabled = false; btn.textContent = '保存到价格库';
-    alert('保存失败，食材名称可能已存在，请重试');
+
+  if (editingLibId !== null) {
+    // UPDATE price
+    try {
+      const res = await fetch(INGR_API + '?id=eq.' + editingLibId, {
+        method: 'PATCH',
+        headers: {...H, 'Prefer': 'return=representation'},
+        body: JSON.stringify({ unit, price_per_unit: price })
+      });
+      if (!res.ok) throw new Error(await res.text());
+      const idx = ingredientLib.findIndex(i => i.id === editingLibId);
+      if (idx !== -1) { ingredientLib[idx].unit = unit; ingredientLib[idx].price_per_unit = price; }
+      setLibSync('ok', '价格已更新，所有菜谱实时刷新');
+      document.getElementById('modalOverlay').classList.add('gone');
+      renderLibrary();
+      // Re-render list so prices update live
+      renderList();
+    } catch(e) {
+      setLibSync('err', '保存失败');
+      btn.disabled = false; btn.textContent = '保存修改';
+      alert('保存失败，请重试');
+    }
+  } else {
+    // INSERT
+    try {
+      const id  = Date.now();
+      const res = await fetch(INGR_API, {
+        method: 'POST',
+        headers: {...H, 'Prefer': 'return=representation'},
+        body: JSON.stringify({ id, name, unit, price_per_unit: price })
+      });
+      if (!res.ok) throw new Error(await res.text());
+      ingredientLib.push({ id, name, unit, price_per_unit: price });
+      ingredientLib.sort((a,b) => a.name.localeCompare(b.name,'zh'));
+      setLibSync('ok', '已添加');
+      document.getElementById('modalOverlay').classList.add('gone');
+      renderLibrary();
+    } catch(e) {
+      setLibSync('err', '保存失败');
+      btn.disabled = false; btn.textContent = '保存到价格库';
+      alert('保存失败，食材名称可能已存在，请重试');
+    }
   }
 }
 
@@ -805,24 +960,11 @@ async function delIngredient(id) {
     ingredientLib = ingredientLib.filter(i => i.id !== id);
     setLibSync('ok', '已删除');
     renderLibrary();
+    renderList();
   } catch(e) {
     setLibSync('err', '删除失败');
     alert('删除失败，请重试');
   }
-}
-
-// ── Image upload ──
-function handleImg(e) {
-  const file = e.target.files[0]; if (!file) return;
-  const reader = new FileReader();
-  reader.onload = ev => {
-    pendingImg = ev.target.result;
-    const img = document.getElementById('previewImg');
-    img.src = pendingImg; img.style.display = 'block';
-    document.getElementById('uploadIcon').style.display = 'none';
-    document.getElementById('uploadHint').style.display = 'none';
-  };
-  reader.readAsDataURL(file);
 }
 
 load();
